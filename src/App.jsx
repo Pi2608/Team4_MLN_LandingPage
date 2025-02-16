@@ -11,8 +11,8 @@ import Header from './components/Header/Header'
 function App() {
   return (
     <>
-      <Header />
-      <Section1 />
+      {/* <Header />
+      <Section1 /> */}
       <Section2 />
       <Section3 />
       <Section4 />
