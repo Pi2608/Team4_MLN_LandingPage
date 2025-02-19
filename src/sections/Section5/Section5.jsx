@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Section5.css'
-import { useEffect, useRef } from "react";
-import { animate } from "motion";
+import { useEffect } from "react";
+import { motion } from "motion/react";
 
 const Section5 = () => {
   const [focusItem, setFocusItem] = useState(1)
@@ -18,25 +18,18 @@ const Section5 = () => {
   useEffect(() => {
     handleFocusItem(focusItem)
   }, [focusItem])
-  const ref = useRef();
 
   const handleFocusClick = (index) => {
     setFocusItem(index)
   }
 
-  useEffect(() => {
-    if (ref.current) {
-      animate(
-        ref.current,
-        { opacity: [0, 1], transform: ["translateY(100px)", "translateY(0)"] },
-        { duration: 1, easing: "linear" }
-      );
-    }
-  }, []);
-
   return (
-    <div id='section5'>
-      <div className="top" ref={ref}>
+    <section id='section5'>
+      <motion.div className="top"
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.5, ease: "linear" }}
+      >
         <div className="title-button">
           <div className='title-conatainer'>
             <p className="title">Tóm Tắt Giai Đoạn Triết Học Hy Lạp</p>
@@ -54,8 +47,12 @@ const Section5 = () => {
           </div>
         </div>
         <p className='mini-title'>Triết học Hy Lạp tiến từ duy vật <span>Tiền Socrates</span>, biện chứng Socrates, hệ thống Plato-Aristotle <span>đến các trường phái Hậu Socrates.</span></p>
-      </div>
-      <div className="bottom">
+      </motion.div>
+      <motion.div className="bottom"
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.5, ease: "linear", delay: 0.2 }}
+      >
         <div className="bottom-container">
           <div className="block item1">
             <div className="svg-container">
@@ -94,8 +91,8 @@ const Section5 = () => {
             <p className='description' onClick={() => { handleFocusClick(6) }}>Chủ nghĩa hoài nghi, khắc kỷ, khoái lạc phát triển, đặt nền tảng cho triết học La Mã.</p>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </section>
   )
 }
 

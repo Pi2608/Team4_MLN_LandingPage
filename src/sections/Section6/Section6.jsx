@@ -43,7 +43,7 @@ const Section6 = () => {
     )
   }
   return (
-    <div id='section6'>
+    <section id='section6'>
       <div className="content">
         <p className="title">
           Vai trò<br />
@@ -62,7 +62,7 @@ const Section6 = () => {
         <ImageSlides images={imageList2} duration={50} isRevert={true} />
         <ImageSlides images={imageList3} duration={20} isRevert={false} />
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -6,10 +6,6 @@ const Header = () => {
   const focusRef = useRef(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
-  const handleTagClick = (value) => {
-    setFocusHeader(value);
-  };
-
   useEffect(() => {
     if (focusRef.current) {
       setSize({
@@ -18,6 +14,24 @@ const Header = () => {
       });
     }
   }, [focusHeader]);
+
+  const handleTagClick = (value) => {
+    setFocusHeader(value);
+
+    const sectionIds = {
+      "1": "section1",
+      "2": "section2",
+      "3": "section3",
+      "4": "section4",
+      "5": "section5",
+      "6": "section6",
+    };
+
+    const section = document.getElementById(sectionIds[value]);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <div id="header">

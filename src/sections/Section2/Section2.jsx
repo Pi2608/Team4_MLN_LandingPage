@@ -45,7 +45,7 @@ const Section2 = () => {
   }, [numSlide]);
 
   return (
-    <div id='section2'>
+    <section id='section2'>
       <div className="word-container">
         <div className="word-scroll">
           <div className="word-block item1">
@@ -222,7 +222,7 @@ const Section2 = () => {
           <span class="button_top">Click N</span>
         </button>
       </div>
-    </div>
+    </section>
   )
 }
 

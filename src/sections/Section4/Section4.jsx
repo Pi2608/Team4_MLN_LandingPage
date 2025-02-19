@@ -22,9 +22,9 @@ import Zeno3 from '../../assets/Zeno3.jpg'
 
 const data = [
   {
-    name: 'Plato', 
+    name: 'Plato',
     period: '(427-347 TCN)',
-    description: 'Học trò của Socrates, ông thành lập Học viện Athens và phát triển lý thuyết về thế giới ý niệm, cho rằng thế giới vật chất chỉ là bản sao của thế giới ý niệm hoàn hảo.', 
+    description: 'Học trò của Socrates, ông thành lập Học viện Athens và phát triển lý thuyết về thế giới ý niệm, cho rằng thế giới vật chất chỉ là bản sao của thế giới ý niệm hoàn hảo.',
     image: [Plato1, Plato2, Plato3],
     biography: [
       "Plato sinh ra trong một gia đình quý tộc ở Athens.",
@@ -43,9 +43,9 @@ const data = [
     ]
   },
   {
-    name: 'Aristotle', 
+    name: 'Aristotle',
     period: '(384-322 TCN)',
-    description: 'Học trò của Plato, ông tập trung vào việc quan sát và phân loại thế giới thực, đóng góp quan trọng trong nhiều lĩnh vực như logic, sinh học và chính trị.', 
+    description: 'Học trò của Plato, ông tập trung vào việc quan sát và phân loại thế giới thực, đóng góp quan trọng trong nhiều lĩnh vực như logic, sinh học và chính trị.',
     image: [Aristotle1, Aristotle2, Aristotle3],
     biography: [
       "Aristotle sinh ra tại Stagira, Macedonia và là học trò xuất sắc của Plato.",
@@ -70,9 +70,9 @@ const data = [
     ]
   },
   {
-    name: 'Diogenes', 
+    name: 'Diogenes',
     period: '(404-323 TCN)',
-    description: 'Đại diện cho trường phái Khuyển Nho (Cynicism), ông chủ trương sống giản dị, từ bỏ vật chất và tuân theo tự nhiên.', 
+    description: 'Đại diện cho trường phái Khuyển Nho (Cynicism), ông chủ trương sống giản dị, từ bỏ vật chất và tuân theo tự nhiên.',
     image: [Diogenes1, Diogenes2, Diogenes3],
     biography: [
       "Diogenes sinh ra tại Sinope (Thổ Nhĩ Kỳ ngày nay) và sau này sống tại Athens và Corinth.",
@@ -90,9 +90,9 @@ const data = [
     ]
   },
   {
-    name: 'Epicurus', 
-    period: '(341-270 TCN)',  
-    description: 'Người sáng lập trường phái Khoái Lạc (Epicureanism), ông cho rằng mục tiêu của cuộc sống là đạt được hạnh phúc thông qua sự thanh thản và tránh đau khổ.', 
+    name: 'Epicurus',
+    period: '(341-270 TCN)',
+    description: 'Người sáng lập trường phái Khoái Lạc (Epicureanism), ông cho rằng mục tiêu của cuộc sống là đạt được hạnh phúc thông qua sự thanh thản và tránh đau khổ.',
     image: [Epicurus1, Epicurus2, Epicurus3],
     biography: [
       "Epicurus sinh ra ở Samos và sau này thành lập Trường Vườn (The Garden) ở Athens.",
@@ -110,9 +110,9 @@ const data = [
     ]
   },
   {
-    name: 'Zeno xứ Citium', 
-    period: '(334-262 TCN)',  
-    description: 'Người sáng lập trường phái Khắc kỷ (Stoicism), ông nhấn mạnh tầm quan trọng của việc sống theo lý trí và chấp nhận những gì không thể thay đổi.', 
+    name: 'Zeno xứ Citium',
+    period: '(334-262 TCN)',
+    description: 'Người sáng lập trường phái Khắc kỷ (Stoicism), ông nhấn mạnh tầm quan trọng của việc sống theo lý trí và chấp nhận những gì không thể thay đổi.',
     image: [Zeno1, Zeno2, Zeno3],
     biography: [
       "Zeno sinh ra ở Citium (Cyprus) và sau khi gặp gỡ các nhà triết học ở Athens, ông sáng lập trường phái Khắc Kỷ (Stoicism).",
@@ -130,56 +130,56 @@ const data = [
   },
 ]
 const Section4 = () => {
-  
+
   const [isVisible, setIsVisible] = useState(null);
-  
+
   return (
     <motion.section id='section4' className='section'>
       <p className="section-title">
         Hậu Socrates
       </p>
-      <Swiper 
+      <Swiper
         className="section-container"
         spaceBetween={50}
         slidesPerView={3}
       >
         {data.map((item, index) => (
           <SwiperSlide key={index} className="swiper-slide">
-            <PopupCard img={item.image[0]} name={item.name} period={item.period} description={item.description} itemNo={index} setIsVisible={setIsVisible}/>
+            <PopupCard img={item.image[0]} name={item.name} period={item.period} description={item.description} itemNo={index} setIsVisible={setIsVisible} />
           </SwiperSlide>
         ))}
       </Swiper>
       {data.map((item, index) => (
-          <Popup imgs={item.image} name={item.name} period={item.period} biography={item.biography} philosophy={item.philosophy} influence={item.influence} isVisible={isVisible === index} setIsVisible={setIsVisible} itemNo={index}/>
+        <Popup imgs={item.image} name={item.name} period={item.period} biography={item.biography} philosophy={item.philosophy} influence={item.influence} isVisible={isVisible === index} setIsVisible={setIsVisible} itemNo={index} />
       ))}
     </motion.section>
   )
 }
 
-const PopupCard = ({ img, name, period, description, itemNo, setIsVisible}) => {
+const PopupCard = ({ img, name, period, description, itemNo, setIsVisible }) => {
 
   const handleOnMouseEnter = () => {
-    animate(`.card${itemNo} .popup-img`, {scale: 0.5, y: -70, x: -130}, {duration: 0.3})
-    animate(`.card${itemNo} .popup-title`, {y: -270, x: 150}, {duration: 0.3})
-    animate(`.card${itemNo} .popup-description`, {y: -160}, {duration: 0.3})
+    animate(`.card${itemNo} .popup-img`, { scale: 0.5, y: -70, x: -130 }, { duration: 0.3 })
+    animate(`.card${itemNo} .popup-title`, { y: -270, x: 230 }, { duration: 0.3 })
+    animate(`.card${itemNo} .popup-description`, { y: -160 }, { duration: 0.3 })
     document.querySelector(`.card${itemNo} .popup-description`).style.display = 'block';
   }
 
   const handleOnMouseLeave = () => {
-    animate(`.card${itemNo} .popup-img`, {scale: 1, y: 0, x: 0}, {duration: 0.2})
-    animate(`.card${itemNo} .popup-title`, {y: 0, x: 0}, {duration: 0.2})
-    animate(`.card${itemNo} .popup-description`, {y: 0}, {duration: 0.2})
-    document.querySelector(`.card${itemNo} .popup-description`).style.display = 'none';  
+    animate(`.card${itemNo} .popup-img`, { scale: 1, y: 0, x: 0 }, { duration: 0.2 })
+    animate(`.card${itemNo} .popup-title`, { y: 0, x: 0 }, { duration: 0.2 })
+    animate(`.card${itemNo} .popup-description`, { y: 0 }, { duration: 0.2 })
+    document.querySelector(`.card${itemNo} .popup-description`).style.display = 'none';
   }
- 
+
   return (
-    <motion.div 
-      whileInView={{opacity: 1, y: 0}} 
-      transition={{duration: 0.95, delay: itemNo * 0.2}}
-      viewport={{once: true}} 
+    <motion.div
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.95, delay: itemNo * 0.2 }}
+      viewport={{ once: true }}
       initial={{ opacity: 0, y: 40 }}
       className={`popup-card card${itemNo}`}
-      onMouseEnter={handleOnMouseEnter}  
+      onMouseEnter={handleOnMouseEnter}
       onMouseLeave={handleOnMouseLeave}
     >
       <motion.div className="popup-img">
@@ -211,13 +211,13 @@ const Popup = ({ imgs, name, period, biography, philosophy, influence, itemNo, i
   }
 
   return (
-    <motion.div 
-      id="popup" 
+    <motion.div
+      id="popup"
       className={`popup pop${itemNo}`}
       whileInView={{ opacity: 1, x: "-50%", y: "-50%" }}
       transition={{ duration: 0.5 }}
       initial={{ opacity: 0, x: "-50%", y: "-30%" }}
-      >
+    >
       <div className="pop-container">
         <div className="pop-img">
           {imgs.map((img, index) => (
@@ -257,7 +257,7 @@ const Popup = ({ imgs, name, period, biography, philosophy, influence, itemNo, i
         </div>
       </div>
       <button className="close-btn" onClick={() => handleClose()}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z" /></svg>
       </button>
     </motion.div>
   )

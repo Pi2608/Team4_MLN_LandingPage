@@ -11,13 +11,13 @@ import Header from './components/Header/Header'
 function App() {
   return (
     <div id='hero'>
-      {/* <Header /> */}
+      <Header />
       <Section1 />
-      {/* <Section2 /> */}
+      <Section2 />
       <Section3 />
       <Section4 />
-      {/* <Section5 /> */}
-      {/* <Section6 /> */}
+      <Section5 />
+      <Section6 />
     </div>
   )
 }
