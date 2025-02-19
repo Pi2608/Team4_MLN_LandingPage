@@ -1,0 +1,175 @@
+#section5 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#section5 .top {
+    width: calc(100% - 8rem);
+    position: absolute;
+    top: 14rem;
+    left: 4rem;
+}
+
+#section5 .bottom {
+    position: absolute;
+    left: 4rem;
+    bottom: 4rem;
+    width: calc(100% - 8rem);
+}
+
+#section5 .bottom .bottom-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+#section5 .bottom .bottom-container::before {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 17px;
+    content: '';
+    background-color: #dadada;
+    z-index: -2;
+}
+
+#section5 .top .title-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+#section5 .title-conatainer {
+    width: 50%;
+}
+
+#section5 .title {
+    font-size: 4.8rem;
+    line-height: 1;
+    font-weight: 600;
+}
+
+#section5 .btns {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    height: inherit;
+    justify-content: center;
+}
+
+#section5 .btns button {
+    cursor: pointer;
+}
+
+#section5 .btns .icon-btns {
+    width: fit-content;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+#section5 .btns .icon-btns .icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #f4f4f4;
+    border-radius: 999px;
+    border: none;
+    margin-left: 10px;
+}
+
+#section5 .btns .icon-btns .icon-btn svg {
+    height: 24px;
+    width: 24px;
+}
+
+#section5 .btns .appointment {
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 999px;
+    padding: 14px 24px;
+    font-size: 15px;
+}
+
+#section5 .mini-title {
+    margin-left: 35%;
+    font-size: 2.4rem;
+    width: 50%;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+#section5 .mini-title span {
+    color: #b0b0b0;
+}
+
+#section5 .block {
+    width: 17.2rem;
+    font-size: 0.9rem;
+}
+
+#section5 .block.item1 {
+    flex: 1;
+    width: auto;
+}
+
+#section5 .block p {
+    width: 13.75rem;
+    color: #cac6ee;
+    cursor: pointer;
+    transition: all 0.25s linear;
+}
+
+#section5 .block.item1 p {
+    width: 18.12rem;
+    margin-left: 20px;
+}
+
+#section5 .block svg {
+    height: 36px;
+    width: 36px;
+    color: #dadada;
+}
+
+#section5 .block.focus svg {
+    color: #978ae9;
+    transition: all 0.25s ease-in-out;
+}
+
+#section5 .block .svg-container {
+    height: 36px;
+    width: 36px;
+    margin-bottom: 30px;
+}
+
+#section5 .block .svg-container {
+    position: relative;
+}
+
+#section5 .block .svg-container::before {
+    width: 17px;
+    height: 17px;
+    content: '';
+    background-color: #d6cefe;
+    border-radius: 999px;
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.25s ease-in-out;
+}
+
+#section5 .block.focus .svg-container::before {
+    width: 30px;
+    height: 30px;
+}
+
+#section5 .block.focus p {
+    color: black;
+    transform: scale(1.3);
+}

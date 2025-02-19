@@ -1,8 +1,15 @@
 #section2 {
     height: 100vh;
-    width: 100%;
+    width: 100vw;
+    overflow-x: hidden;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+#section2 .word-container {
+    position: absolute;
+    width: 100%;
 }
 
 #section2 .word-scroll span {
@@ -51,5 +58,180 @@
 @keyframes scrollRight {
     to {
         left: 100%;
+    }
+}
+
+#section2 .cards-container {
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#section2 .card {
+    width: 570px;
+    height: 650px;
+    background-color: #f4f4f4;
+    border-radius: 40px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    position: absolute;
+    border: 1px solid rgb(206, 206, 206);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#section2 .card .user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+
+#section2 .card img {
+    width: 520px;
+    border-radius: 40px;
+    height: 480px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#section2 .card .name-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#section2 .card .detail p {
+    font-size: 30px;
+}
+
+#section2 .card .info {
+    border-radius: 999px;
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    padding: 10px 20px;
+    border: 1px solid black;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+#section2 .card.explore {
+    width: 1200px;
+    height: 700px;
+    display: flex;
+    position: absolute;
+}
+
+#section2 .card.explore .user-info {
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    width: 300px;
+    align-items: center;
+}
+
+#section2 .card.explore .name-info {
+    width: fit-content;
+}
+
+#section2 .card.explore img {
+    width: 200px;
+    height: 200px;
+}
+
+#section2 .card.explore .name-info p {
+    font-size: 18px;
+    margin-top: 10px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#section2 .card.explore button {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+#section2 .card .information {
+    display: none;
+}
+
+#section2 .card.explore .information {
+    display: flex;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    flex: 1;
+}
+
+#section2 .card.explore .information .background {
+    position: absolute;
+    width: calc(100% + 25px);
+    height: calc(100% + 50px);
+    padding: 60px 30px;
+    background-color: #6f7eaf;
+    color: white;
+    border-radius: 0 40px 40px 0;
+}
+
+#section2 .card.explore .information .background .border {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#section2 .card.explore .information .background .normal {
+    margin-bottom: 10px;
+}
+
+#section2 .card.explore .information .background ul {
+    margin-bottom: 10px;
+}
+
+#section2 .card.explore {
+    transform: translate(-50%, -50%);
+}
+
+#section2 .num1 {
+    z-index: 6;
+}
+
+#section2 .num2 {
+    z-index: 5;
+    transform: translate(-50%, -50%) rotate(3deg);
+}
+
+#section2 .num3 {
+    z-index: 4;
+    transform: translate(-50%, -50%) rotate(6deg);
+}
+
+#section2 .num4 {
+    z-index: 3;
+    transform: translate(-50%, -50%) rotate(9deg);
+}
+
+#section2 .num5 {
+    z-index: 2;
+    transform: translate(-50%, -50%) rotate(12deg);
+}
+
+#section2 .card.out {
+    animation: goUp 0.7s linear forwards;
+}
+
+@keyframes goUp {
+    to {
+        transform: translate(-50%, -250%) rotate(45deg);
+        opacity: 0;
     }
 }
