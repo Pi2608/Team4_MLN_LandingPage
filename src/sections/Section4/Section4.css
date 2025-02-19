@@ -1,0 +1,224 @@
+#section4 {
+    padding: 1.5em 2em;
+}
+
+#section4 .section-title {
+    font-size: 3.7em;
+    margin: 15px;
+    text-align: end;
+    white-space: nowrap;
+    line-height: 2;
+    color: #a69ed7;
+}
+
+#section4 .section-container {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+}
+
+#section4 .popup-card {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+#section4 .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 40px 0;
+}
+
+#section4 .popup-img {
+    height: 70%;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(0, 80, 150);
+    overflow: hidden;
+    position: relative;
+}
+
+#section4 .popup-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#section4 .content-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px ;
+}
+
+#section4 .content-container > .content > .popup-title{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 100%;
+}
+
+#section4 .content-container > .content > .popup-title > .name {
+    font-size: 1.6em;
+    white-space: nowrap;
+    /* color: #7970b8;  */
+}
+
+#section4 .desc-container {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    z-index: 10;
+    overflow: hidden;
+
+}
+
+#section4 .popup-description {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    font-size: 1.1em;
+    text-align: start;
+    /* transition: all ; */
+}
+
+#section4 .popup-card button {
+    background-color: #a69ed7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+    width: fit-content;
+    z-index: 5;
+    transition: all 0.25s;
+}
+
+#section4 .popup-card button:hover {
+    background-color: #8e85b5;
+}
+
+#section4 #popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    height: 90vh;
+    background-color: #fff6e6;
+    z-index: 10;
+    border-radius: 25px;
+    padding: 25px;
+    overflow-y: scroll;
+}
+
+#section4 #popup::-webkit-scrollbar {
+    display: none;
+}
+
+#section4 #popup .pop-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#section4 #popup .pop-img {
+    display: flex;
+    height: 300px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#section4 #popup .pop-img .img-card {
+    height: 100%;
+    width: 33%;
+    object-fit: cover;
+}
+
+#section4 #popup .pop-img .img-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#section4 #popup .pop-title {
+    font-size: 2em;
+    margin: 15px;
+    text-align: center;
+    font-weight: 700;
+    white-space: nowrap;
+    line-height: 2;
+}
+
+#section4 #popup .pop-ctn {
+    margin: 0 25px;
+}
+
+#section4 #popup .pop-mini-title {
+    font-size: 1.3em;
+    margin: 15px;
+    text-align: start;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+#section4 #popup .pop-container ul {
+    font-size: 1.1em;
+    margin: 15px;
+    text-align: start;
+    line-height: 1.5;
+}
+
+#section4 #popup .close-btn {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #a69ed7;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.25s;
+    padding: 3px;
+}
+
+#section4 #popup .close-btn:hover {
+    background-color: #8e85b5;
+}
+
+.pop-hide {
+    animation: closePopup 0.5s linear;
+} 
+
+@keyframes closePopup {
+    to{
+        display: none;
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+}
