@@ -33,6 +33,32 @@ const Header = () => {
     }
   };
 
+  useEffect(() => {
+    const sectionIds = ["section1", "section2", "section3", "section4", "section5", "section6"];
+    const sections = sectionIds.map((id) => document.getElementById(id));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries.find((entry) => entry.isIntersecting);
+        if (visibleSection) {
+          const index = sections.indexOf(visibleSection.target);
+          setFocusHeader((index + 1).toString());
+        }
+      },
+      { threshold: 0.6 }
+    );
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
     <div id="header">
       <div className="tag-containers">
