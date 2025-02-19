@@ -20,27 +20,6 @@
     border-radius: 999px;
     border: 2px solid #5b6ab0;
     transition: all 0.3s linear;
-    left: 8px;
-}
-
-#header .tag-containers .item2 {
-    left: 134px;
-}
-
-#header .tag-containers .item3 {
-    left: 265px;
-}
-
-#header .tag-containers .item4 {
-    left: 363px;
-}
-
-#header .tag-containers .item5 {
-    left: 502px;
-}
-
-#header .tag-containers .item6 {
-    left: 610px;
 }
 
 #header .tag-container {

@@ -8,9 +8,11 @@ const Header = () => {
 
   useEffect(() => {
     if (focusRef.current) {
+      const { offsetWidth, offsetHeight, offsetLeft } = focusRef.current;
       setSize({
         width: focusRef.current.offsetWidth,
-        height: focusRef.current.offsetHeight
+        height: focusRef.current.offsetHeight,
+        left: offsetLeft + offsetWidth / 2
       });
     }
   }, [focusHeader]);
@@ -73,7 +75,7 @@ const Header = () => {
           </div>
         ))}
         <div className={`border-tag item${focusHeader}`}
-          style={{ width: size.width, height: size.height }}>
+          style={{ width: size.width, height: size.height, left: `calc(${size.left}px - ${size.width / 2}px)` }}>
         </div>
       </div>
     </div>

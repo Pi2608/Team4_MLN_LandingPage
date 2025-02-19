@@ -31,9 +31,9 @@
 
 #section2 .word-scroll .word-block {
     position: absolute;
-    width: 635px;
+    width: 650px;
     top: 0;
-    left: -635px;
+    left: -650px;
     animation-name: scrollRight;
     animation-duration: 10s;
     animation-timing-function: linear;
