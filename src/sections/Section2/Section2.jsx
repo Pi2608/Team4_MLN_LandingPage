@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './Section2.css'
 import thales from '../../assets/thales.jpg'
 import anaximander from '../../assets/Anaximander.jpg'
@@ -9,6 +9,7 @@ import Pythagoras from '../../assets/Pythagoras.jpg'
 const Section2 = () => {
   const [focus, setFocus] = useState("")
   const [numSlide, setNumSlide] = useState(1)
+  const ref = useRef();
   const handleInfoClick = (value) => {
     const card = document.querySelector(`.card.${value}`);
     if (card) {
@@ -18,12 +19,20 @@ const Section2 = () => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === "ArrowDown") {
+      if (event.key === "N" || event.key === "n") {
         console.log(numSlide);
         const card = document.querySelector(`.card.num${numSlide}`);
         setNumSlide((prevNum) => prevNum + 1);
         if (card) {
           card.classList.add("out");
+        }
+        if (ref.current) {
+          ref.current.classList.add("active");
+          ref.current.click();
+
+          setTimeout(() => {
+            ref.current.classList.remove("active");
+          }, 150);
         }
       }
     };
@@ -207,6 +216,11 @@ const Section2 = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="btn-container">
+        <button ref={ref} className='button-tap'>
+          <span class="button_top">Click N</span>
+        </button>
       </div>
     </div>
   )

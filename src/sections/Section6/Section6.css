@@ -6,11 +6,11 @@
 }
 
 #section6 .content {
-    flex: 1;
+    flex: 4;
 }
 
 #section6 .image-slides {
-    flex: 1;
+    flex: 6;
     display: flex;
     gap: 15px;
     position: relative;
@@ -115,4 +115,81 @@
     100% {
         transform: translateY(0);
     }
+}
+
+#section6 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#section6 .content .title {
+    width: 80%;
+    font-size: 35px;
+    font-weight: 800;
+}
+
+#section6 .content .description {
+    width: 80%;
+    font-size: 15px;
+    color: rgb(148, 148, 148);
+}
+
+#section6 .content .description span {
+    color: #a7a1e2;
+    text-decoration: underline;
+}
+
+#section6 button {
+    --color: #560bad;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+    background-color: white;
+}
+
+#section6 button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+#section6 button:hover {
+    color: #fff;
+}
+
+#section6 button:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+}
+
+#section6 button:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+#section6 button:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+}
+
+#section6 a {
+    margin: 20px 0;
 }
