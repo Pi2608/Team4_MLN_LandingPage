@@ -56,6 +56,7 @@ const Section6 = () => {
           Hậu Socrates phát triển nhiều trường phái như <span>khắc kỷ, hoài nghi và khoái lạc, định hình tư tưởng về hạnh phúc, đạo đức và chính trị.</span> Những tư tưởng này tiếp tục ảnh hưởng đến triết học Trung Cổ, Phục Hưng và hiện đại, tạo nền tảng cho triết học phương Tây ngày nay.
         </p>
         <a target="_blank" href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://vjol.info.vn/index.php/khxhvn/article/download/23606/20183/&ved=2ahUKEwj377mOodCLAxVldfUHHZ23NKEQFnoECBIQAQ&usg=AOvVaw0T8E7sL21Ogd1_Xmw2FrBG"><button>Explore</button></a>
+        <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScWAj07tAYDTjj-gNZym7o4M-KfU95vE2KoD1hF-fIWqJ2LtQ/viewform?usp=header"><button>Contact us</button></a>
       </div>
       <div className="image-slides">
         <ImageSlides images={imageList1} duration={20} isRevert={false} />
